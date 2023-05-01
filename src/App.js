@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState }
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap";
+function app() {
+  const getQuote = () => {
+    axios.get('https://api.quotable.io/random')
+      .then(res => {
+      
+    }).catch(err =>{})
+  }
 
+
+}
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          <button type="button" class="btn btn-info" onClick={getQuote}>Get Random Quote</button>
+        </div>
       </header>
+
     </div>
   );
 }
